@@ -3,6 +3,7 @@ import Die from "./components/Die.jsx"
 import { nanoid } from "nanoid"
 
 export default function App() {
+
     const [dice, setDice] = useState(generateAllNewDice())
 
     function rollDice(){
@@ -19,11 +20,18 @@ export default function App() {
               
               }))
     }
+
+    function hold(id){
+       console.log(id)
+    }
+   hold()
     
     const diceElements = dice.map((dieobj  =>(
       <Die key ={dieobj.id} 
+      id = {dieobj.id}
       value = {dieobj.value}
       isHeld={dieobj.isHeld}
+      hold = {()=> hold(dieobj.id)}
       />
     )))
     
