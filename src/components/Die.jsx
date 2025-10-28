@@ -1,8 +1,10 @@
-export default function Die({value}) {
+export default function Die({value, isHeld}) {
     
   return (
     <section>
-       <button className="dice-container">{value}</button>
+       <button style={isHeld ? { backgroundColor: "green" } : {}}>
+    {value}
+  </button>
     </section>
   )
 }
